@@ -5,8 +5,6 @@ public class Pizza {
 		SMALL, MEDIUM, LARGE, EXTRALARGE;
 
 		public String getSize() {
-
-			// this will refer to the object SMALL
 			switch (this) {
 			case SMALL:
 				return "small";
@@ -22,9 +20,6 @@ public class Pizza {
 		}
 
 		public static void main(String[] args) {
-
-			// call getSize()
-			// using the object SMALL
 			System.out.println("The size of the pizza is " + Size.SMALL.getSize());
 		}
 	}
