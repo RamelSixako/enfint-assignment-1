@@ -7,13 +7,13 @@ public class Pizza {
 		public String getSize() {
 			switch (this) {
 			case SMALL:
-				return "small";
+				return "24cm";
 
 			case MEDIUM:
-				return "medium";
+				return "30cm";
 
 			case LARGE:
-				return "large";
+				return "35cm";
 			default:
 				return null;
 			}
