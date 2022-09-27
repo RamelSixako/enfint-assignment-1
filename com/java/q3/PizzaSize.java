@@ -6,16 +6,15 @@ public enum PizzaSize {
 
 	public String getSize() {
 
-		// this will refer to the object SMALL
 		switch (this) {
 		case SMALL:
-			return "small";
+			return "24cm";
 
 		case MEDIUM:
-			return "medium";
+			return "28cm";
 
 		case LARGE:
-			return "large";
+			return "30cm";
 		default:
 			return null;
 		}
@@ -23,8 +22,6 @@ public enum PizzaSize {
 
 	public static void main(String[] args) {
 
-		// call getSize()
-		// using the object SMALL
-		System.out.println("The size of the pizza is " + PizzaSize.SMALL.getSize());
+	System.out.println("The size of the pizza is " + PizzaSize.SMALL.getSize());
 	}
 }
