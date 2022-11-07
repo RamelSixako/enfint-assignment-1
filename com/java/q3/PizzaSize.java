@@ -2,19 +2,27 @@ package com.java.q3;
 
 public enum PizzaSize {
 
-	SMALL, MEDIUM, LARGE, EXTRALARGE;
+	SMALL("24cm"), MEDIUM("28cm"), LARGE("30cm"), EXTRALARGE("36cm");
+
+	private final String size;
+
+	PizzaSize(String string) {
+		this.size = string;
+	}
 
 	public String getSize() {
 
 		switch (this) {
 		case SMALL:
-			return "24cm";
+			return size;
 
 		case MEDIUM:
-			return "28cm";
+			return size;
 
 		case LARGE:
-			return "30cm";
+			return size;
+		case EXTRALARGE:
+			return size;
 		default:
 			return null;
 		}
@@ -22,6 +30,6 @@ public enum PizzaSize {
 
 	public static void main(String[] args) {
 
-	System.out.println("The size of the pizza is " + PizzaSize.SMALL.getSize());
+		System.out.println("The size of the pizza is " + PizzaSize.SMALL.getSize());
 	}
 }
