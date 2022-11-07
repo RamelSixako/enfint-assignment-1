@@ -58,4 +58,15 @@ public class Line extends Shape {
 		return "Line";
 	}
 
+	@Override
+	public void displayContent() {
+		System.out.println("---------------------------Line--------------------------------");
+		System.out.println(getArea());
+		System.out.println(getTotalLengh());
+		System.out.println(getType());
+		System.out.println("Point 1 = " + getP1().toString());
+		System.out.println("Point 2 = " + getP2().toString());
+
+	}
+
 }

@@ -99,4 +99,15 @@ public class Triangle extends Shape {
 		return "Isosceles";
 	}
 
+	@Override
+	public void displayContent() {
+		System.out.println("---------------------------Triangle--------------------------------");
+		System.out.println(getArea());
+		System.out.println(getTotalLengh());
+		System.out.println(getType());
+		System.out.println("Point 1 = " + getP1().toString());
+		System.out.println("Point 2 = " + getP2().toString());
+		System.out.println("Point 3 = " + getP3().toString());
+	}
+
 }

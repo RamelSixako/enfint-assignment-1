@@ -8,4 +8,6 @@ public abstract class Shape {
 
 	public abstract String getType();
 
+	public abstract void displayContent();
+
 }

@@ -71,4 +71,14 @@ public class Points extends Shape {
 	public String toString() {
 		return "x:" + x + ",y:" + y;
 	}
+
+	@Override
+	public void displayContent() {
+		System.out.println("---------------------------Points--------------------------------");
+		System.out.println(getArea());
+		System.out.println(getTotalLengh());
+		System.out.println(getType());
+		System.out.println(toString());
+	}
+
 }

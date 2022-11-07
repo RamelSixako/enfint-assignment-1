@@ -101,4 +101,17 @@ public class Parallelogram extends Shape {
 		this.height = height;
 	}
 
+	@Override
+	public void displayContent() {
+		System.out.println("---------------------------" + getType() + "--------------------------------");
+		System.out.println(getArea());
+		System.out.println(getTotalLengh());
+		System.out.println(getType());
+		System.out.println("Point 1 = " + getP1().toString());
+		System.out.println("Point 2 = " + getP2().toString());
+		System.out.println("Point 3 = " + getP3().toString());
+		System.out.println("Point 4 = " + getP4().toString());
+
+	}
+
 }

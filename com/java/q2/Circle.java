@@ -36,4 +36,13 @@ public class Circle extends Shape {
 		this.radius = radius;
 	}
 
+	@Override
+	public void displayContent() {
+		System.out.println("---------------------------Circle--------------------------------");
+		System.out.println(getArea());
+		System.out.println(getTotalLengh());
+		System.out.println(getType());
+		System.out.println(getRadius());
+	}
+
 }
