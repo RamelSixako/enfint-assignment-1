@@ -2,38 +2,29 @@ package com.java.q1;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Contacts {
 
-	HashMap<String, ArrayList<String>> contacts;
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	private Map<String, List<String>> contacts = new HashMap();
 
-	/**
-	 * @return the contacts
-	 */
-	public HashMap<String, ArrayList<String>> getContacts() {
-		return contacts;
-	}
-
-	public boolean addNewContact(String name, String phonenNumber) {
+	public void addNewContact(String name, String phoneNumber) {
+		List<String> list = new ArrayList<String>();
 		if (contacts.containsKey(name)) {
-			ArrayList<String> currentList = contacts.get(name);
-			if (currentList.contains(phonenNumber)) {
-				return false;
+			list = contacts.get(name);
+			if (list.contains(phoneNumber)) {
+				return;
 			}
-
-			currentList.add(phonenNumber);
-			contacts.put(name, currentList);
-			return true;
-
+			return;
 		}
-		ArrayList<String> newPhoneNumbers = new ArrayList<String>();
-		newPhoneNumbers.add(phonenNumber);
-		contacts.put(name, newPhoneNumbers);
-		return true;
+		list.add(phoneNumber);
+		contacts.put(name, list);
 	}
 
-	public ArrayList<String> searchContactBytext(String name) {
-		ArrayList<String> result = new ArrayList<String>();
+	public List<String> searchContactByText(String name) {
+		List<String> result = new ArrayList<String>();
 		for (String key : contacts.keySet()) {
 			if (key.toLowerCase().contains(name.toLowerCase())) {
 				for (String phoneNumbers : contacts.get(key)) {
@@ -41,34 +32,12 @@ public class Contacts {
 				}
 			}
 		}
-		if (result.isEmpty()) {
-			return null;
-		}
 		return result;
-
 	}
 
-	public ArrayList<String> getContactsByName(String name) {
-		ArrayList<String> result = new ArrayList<String>();
-		for (String key : contacts.keySet()) {
-			if (key.toLowerCase().contentEquals(name.toLowerCase())) {
-				for (String phoneNumbers : contacts.get(key)) {
-					result.add(phoneNumbers);
-				}
-			}
-		}
-		if (result.isEmpty()) {
-			return null;
-		}
+	public List<String> getContactsByName(String name) {
+		List<String> result = contacts.getOrDefault(name, List.of());
 		return result;
-
-	}
-
-	/**
-	 * @param contacts
-	 */
-	public Contacts() {
-		this.contacts = new HashMap<String, ArrayList<String>>();
 	}
 
 	public void displayContacts() {
