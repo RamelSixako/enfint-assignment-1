@@ -1,6 +1,6 @@
 package com.java.q1;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MainProgram {
@@ -27,7 +27,7 @@ public class MainProgram {
 			if (search.length() < 0) {
 				break;
 			}
-			ArrayList<String> result = contacts.searchContactBytext(search);
+			List<String> result = contacts.searchContactByText(search);
 			if (result == null || result.isEmpty()) {
 				System.out.println("No result for search " + search);
 				continue;
